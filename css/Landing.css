@@ -1,0 +1,259 @@
+:root {
+    --base-font-s: 14px;
+    --base-font-m: 28px;
+    --base-font-l: 48px;
+
+    /* переменные для цвета теста и фона*/
+    --text-color: #18191f;
+    --text-bgcolor: white;
+
+    /*переменные для кнопок и текста кнопок*/
+    --btn-bgcolor: #8c30f5;
+    --btn-text-color: #ffff;
+    --btn-border-radius: 100px;
+
+    /*переменные для внешних и внутренних отступов*/
+    --base-size-xs: 8px;
+    --base-size-s: 16px;
+    --base-size-m: 32px;
+    --base-size-l: 64px;
+
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font: var(--base-font-s);
+    font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+button {
+    padding: 0;
+
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+    /*    background-color: burlywood;*/
+}
+
+.selected-title {
+    font-size: var(--base-font-l);
+    padding: calc(var(--base-size-xs)*10) 0 calc(var(--base-size-s)*3) 0;
+}
+
+.selected-blocks__title {
+    font-size: var(--base-font-m);
+    font-weight: 400;
+    margin-bottom: calc(var(--base-size-xs)*3);
+}
+
+.selected-blocks {
+    width: 500px;
+    display: inline-block;
+}
+
+.selected-blocks:nth-child(even) {
+    margin-right: 110px;
+}
+
+.selected-blocks:nth-child(odd) {
+    margin-left: -4px;
+}
+
+.selected-blocks__item {
+    margin-bottom: calc(var(--base-size-xs)*10);
+    position: relative;
+}
+
+.selected-blocks__item > div {
+    border-bottom: 1px solid #f4f5f7;
+    padding: calc(var(--base-size-xs)*3) 0;
+
+}
+
+.selected-blocks__img {
+    display: block;
+    position: relative;
+}
+
+.selected-blocks__img:hover {
+    filter: brightness(70%);
+    transition: 1s;
+}
+
+
+span {
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 800;
+    width: calc(100% - 122px);
+}
+
+
+button {
+    padding: var(--base-size-xs) var(--base-size-s);
+    border-radius: var(--btn-border-radius);
+    color: var(--btn-text-color);
+    font-weight: 700;
+    background-color: var(--btn-bgcolor);
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+
+button:hover {
+    background-color: #7a16eb;
+}
+
+button:focus {
+    background-color: #a862f7;
+
+}
+
+@media (min-width:320px) and (max-width:768px) {
+
+
+    .container {
+        width: 100%;
+        /*        background-color: chocolate;*/
+        overflow: hidden;
+
+    }
+
+    .selected-title {
+        font-size: var(--base-font-m);
+        text-align: center;
+    }
+
+    .selected-blocks {
+        width: 100%;
+    }
+
+    .selected-blocks__title {
+        font-size: calc (var(--base-font-s) * 1.5);
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .selected-blocks__item div {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+
+    .selected-blocks__img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .selected-blocks:nth-child(odd) {
+        margin-left: 0;
+    }
+
+
+
+
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+
+    .container {
+        background: coral;
+        width: 100%;
+    }
+
+    .selected-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .selected-blocks {
+        width: 40%;
+    }
+
+    .selected-blocks__title {
+        width: 90%;
+        font-size: var(--base-font-s);
+        text-align: center;
+    }
+
+    .selected-blocks__item div {
+        width: 100%;
+    }
+
+    .selected-blocks__img {
+        width: 100%;
+    }
+
+    span {
+        font-size: calc(var(--base-font-s) - 4px);
+        text-align: left;
+        padding: calc(var(--base-size-xs) + 2px);
+    }
+
+    button {
+        font-size: calc(var(--base-font-s) - 4px);
+        float: right;
+        padding: calc(var(--base-size-xs) + 2px);
+    }
+
+    .selected-blocks:nth-child(even) {
+        margin-right: 10%;
+        margin-left: 5%;
+
+    }
+
+}
+
+@media (min-width:1025px) and (max-width:1440px) {
+
+    .container {
+        background-color: rosybrown;
+        width: 100%;
+    }
+
+    .selected-title {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .selected-blocks {
+        width: 35%;
+    }
+
+    .selected-blocks:nth-child(even) {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .selected-blocks__item div {
+        width: 100%;
+    }
+
+    .selected-blocks__img {
+        width: 100%;
+    }
+
+
+    span {
+        font-size: calc(var(--base-font-s) - 2px);
+
+    }
+
+    .selected-blocks__title {
+        width: 90%;
+        text-align: center;
+        font-size: calc(var(--base-font-s) + 5px);
+    }
+}
