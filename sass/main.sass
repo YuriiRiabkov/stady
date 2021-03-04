@@ -1,0 +1,245 @@
+// переменные шрифтов и цвета текста
+$font-stack: 'Inter', sans-serif
+$primary-text-color: #ffff
+$secondary-text-color: #8692a6
+$tertiary-text-color: #000000
+
+// переменные отступов
+$size-xs: 16px
+$size-s: 32px
+$size-m: 48px
+$size-l: 64px
+
+// обнуление отступов
+%reset
+    margin: 0
+    padding: 0
+// центрирование элементов
+%center
+    margin: 0 auto
+
+// обнуление рамки у кнопки + радиус,курсор
+%reset-btn
+    border: 0
+    outline: 0
+    cursor: pointer
+    border-radius: 6px
+
+body
+    @extend %reset
+
+*
+    box-sizing: border-box
+
+#Onboarding
+    display: flex
+    flex-direction: row
+
+                   // Left side
+
+.left-side
+    width: 666px
+    background-image: url("../img/background onboarding.jpeg")
+
+.description
+
+    &__icon-box
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        img
+            &:first-child
+                margin: $size-l 0 0 $size-l+18px
+            &:last-child
+                align-self: flex-end
+                margin: $size-l+54px $size-l * 3 $size-l 0
+
+    &__text
+        color: $primary-text-color
+        font-family: $font-stack
+        font-size: $size-xs+4px
+        width: 473px
+        margin-left: $size-l+18px
+        margin-right: $size-xs * 7
+        p
+            margin-top: $size-s+8px
+
+    &__signature
+        display: flex
+        margin-top: $size-xs+6px
+
+        span
+            color: $primary-text-color
+            font-size: $size-xs+2px
+            margin-right: $size-xs - 7px
+            font-family: $font-stack
+            margin-left: $size-l+18px
+
+    &__vector
+        img
+            &:first-child
+                display: block
+                margin-top: $size-s+3px
+                margin-left: $size-s * 15
+            &:last-child
+                margin-bottom: $size-xs - 8px
+                margin-top: $size-xs * 14
+
+                  // Right side
+
+// элементы контроля страницы    
+.control-buttons
+    display: flex
+    margin-top: $size-xs+9px
+
+.button-back
+    display: flex
+    align-items: flex-start
+    margin-left: $size-m+7px
+
+.button-back span
+    margin-left: $size-xs - 4px
+    font-family: $font-stack
+    font-weight: 600
+    font-size: $size-xs
+    color: $secondary-text-color
+
+.step
+    display: flex
+    flex-direction: column
+    margin-left: 483px
+
+.step span
+    &:first-child
+        color: #BDBDBD
+        font-size: $size-xs - 2px
+        font-family: $font-stack
+        font-weight: 500
+    &:last-child
+        color: $secondary-text-color
+        font-family: $font-stack
+        font-weight: 600
+        font-size: $size-xs
+
+// форма регистрации
+.registration-form
+    display: flex
+    flex-direction: column
+    margin-left: $size-l * 2
+    width: 426px
+
+    &__title
+        font-family: $font-stack
+        font-size: $size-s - 2px
+        font-weight: 700
+        @extend %reset
+        margin-top: $size-l+14px
+    &__subtitle
+        font-family: $font-stack
+        font-weight: 400
+        @extend %reset
+        color: $secondary-text-color
+        margin-top: $size-xs - 6px
+        font-size: $size-xs+2px
+
+    &__border-bottom
+        border: 1px solid #f5f5f5
+        margin-top: $size-xs
+    &__inputs
+        display: flex
+        flex-direction: column
+
+    &__inputs label
+        margin-bottom: $size-xs
+        margin-top: $size-xs+8px
+        font-size: $size-xs - 2px
+        font-family: $font-stack
+        font-weight: 500
+        color: $secondary-text-color
+
+    &__inputs input
+        padding: $size-xs+6px 0 $size-xs+6px $size-s - 2px
+        @extend %reset-btn
+        border: 1px solid #8692A6
+        color: $secondary-text-color
+        font-size: $size-xs - 2px
+        font-weight: 500
+        font-family: $font-stack
+
+        &__inputs input
+        &:focus
+            border: 1px solid #1565d8
+            box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11)
+            color: black
+
+#password
+    position: relative
+
+.for
+    display: block
+    position: absolute
+    margin-top: 218px
+    margin-left: 360px
+
+.custom-control-label
+    font-family: $font-stack
+    font-size: $size-xs
+    font-weight: 500
+    color: $secondary-text-color
+    padding-top: $size-xs - 14px
+    padding-left: $size-xs - 10px
+
+// кнопка подтверждения аккаунта
+.Register-account
+    @extend %reset
+    margin-top: $size-s+5px
+    padding: $size-xs+7px 0
+    @extend %reset-btn
+    color: $primary-text-color
+    font-family: $font-stack
+    background: #0f68e4
+    font-size: $size-xs
+    font-weight: 500
+    &:hover
+        background-color: #0344a0
+    &:focus
+        background-color: #5594eb
+        @extend %reset-btn
+
+// border
+.registration-form__border
+    display: flex
+    margin: $size-s 0
+    align-items: center
+
+.registration-form__border div
+    width: $size-l+108px
+    height: 1px
+    background: #f5f5f5
+.registration-form__border span
+    display: inline-block
+    margin: 0 $size-s
+    color: #bababa
+    font-size: $size-xs - 4px
+
+// кнопка регистрации google
+.Register-google
+    font-size: $size-xs
+    font-weight: 500
+    font-family: $font-stack
+    position: relative
+    padding: $size-xs+7px 0
+    @extend %reset-btn
+    background-color: #ffff
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08)
+    &:focus
+        background-color: #f7f7f7b7
+        @extend %reset-btn
+    &:hover
+        background-color: #0344a0
+
+.Register-google img
+    box-sizing: border-box
+    display: block
+    position: absolute
+    margin-left: $size-m - 5px
