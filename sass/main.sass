@@ -1,0 +1,922 @@
+@font-face
+    font-family: 'Gotham Pro'
+    src: url('../fonts/GothamPro-Bold.woff2') format('woff2')
+    src: url('../fonts/GothamPro-Bold.woff') format('woff')
+    font-weight: 700
+    font-style: normal
+    font-stretch: normal
+    unicode-range: U+0020-00FE
+
+@font-face
+    font-family: 'Gotham Pro'
+    src: url('../fonts/GothamPro.woff2') format('woff2')
+    src: url('../fonts/GothamPro.woff') format('woff')
+    font-weight: 400
+    font-style: normal
+    font-stretch: normal
+    unicode-range: U+0020-00FE
+
+// основной шрифт макета
+$font-stack: 'Gotham Pro'
+
+// минус margin 
+$margin-negative: -5px
+
+// переменные для цвета
+$first-color: #ffff
+$secondary-color: #f4f4f4
+
+// переменная для радиуса рамки
+$b-radius: 4px
+
+// переменные для margin, padding, f-size
+$size-xs: 10px
+$size-s: 15px
+$size-m: 20px
+$size-l: 30px
+
+//обнуление  отступов
+%reset
+    padding: 0
+    margin: 0
+// обнуление параметров кнопок
+%btn-reset
+    outline: none
+    border: 0
+// центрирование элементов по горизонтали
+%center
+    margin: 0 auto
+
+*
+    box-sizing: border-box
+    @extend %reset
+    font-family: $font-stack
+
+a
+    text-decoration: none
+
+body
+    background-color: #E5E5E5
+
+// стилизация header
+
+.wrapper-header
+    // background-color: black      
+.header
+    display: flex
+    border-radius: $b-radius
+    margin-left: $size-m * 2
+    margin-right: $size-m * 2
+    background-color: $first-color
+
+    &__logo
+        padding: $size-s+2px $size-m * 2
+        border-right: 1px solid $secondary-color
+
+    &__menu
+        width: 450px
+        border-right: 1px solid $secondary-color
+
+        ul
+            display: flex
+            justify-content: space-around
+            list-style-type: none
+            text-align: center
+            text-transform: uppercase
+            margin-top: $size-m
+            margin-left: 13px
+            margin-right: $size-m
+
+        p
+            color: rgba(24, 24, 24, 1)
+            font-weight: bold
+            font-size: $size-xs+2px
+            margin-bottom: $size-m - 1px
+            &:hover
+                color: #0275b1
+
+        .menu-elements
+            width: 90px
+            &:hover
+                border-bottom: 3px solid #0275b1
+
+            svg
+                &:hover path
+                    stroke: #0275B1
+                    position: relative
+            img
+                position: absolute
+                margin-top: -5px
+                margin-left: $size-xs+3px
+    &__search
+        position: relative
+        border-right: 1px solid $secondary-color
+        vertical-align: middle
+        width: 367px
+
+        & input
+            font-size: $size-s+1px
+            @extend %btn-reset
+            color: rgba(206, 206, 206, 1)
+            margin-left: $size-l+44px
+            margin-top: $size-l+3px
+            margin-right: $size-xs * 10
+            cursor: pointer
+
+        & img
+            position: absolute
+            margin-left: $size-l+3px
+            margin-top: $size-l+1px
+
+    &__account
+        display: flex
+        border-right: 1px solid $secondary-color
+        width: 350px
+        & .image
+            align-self: center
+            margin-left: $size-l
+            margin-right: $size-s
+
+        & .name
+            display: flex
+            font-size: $size-xs+2px
+            font-weight: 400
+            margin-top: $size-m+4px
+            margin-bottom: $size-xs
+
+            & span
+                color: rgba(24,24,24,0.2 )
+                margin-right: $size-l+96px
+
+            & p
+                font-weight: bold
+                margin-right: $size-xs
+
+        & .views
+            font-size: $size-xs+2px
+            // border: 1px solid red 
+            & span
+                color: rgba(116, 116, 116, 1)
+                margin-right: $size-xs
+            & img
+                vertical-align: middle
+                &:first-child
+                    margin-right: 15px
+
+.other
+
+    display: flex
+    flex-direction: column
+    border-right: 1px solid $secondary-color
+    align-items: center
+    width: 90px
+
+    svg
+        &:first-child
+            margin-bottom: $size-xs
+            margin-top: $size-m
+
+// стилизация основного контента
+.wrap
+    width: 1205px
+    margin-right: 66px
+    margin-left: 200px
+    margin-top: $size-l+10px
+    background-color: #E5E5E5
+    display: flex
+
+    // стилизация навигационного меню
+.left
+    &__side
+        width: 290px
+        background-color: $first-color
+
+    &__list-item
+        list-style-type: none
+        text-transform: uppercase
+
+        & li
+            border-bottom: 1px solid rgba(244, 244, 244, 1)
+            padding: $size-m 0
+
+            &:last-child
+                border-bottom: 0
+            &:hover
+                border-left: 8px solid rgba(2, 117, 177, 1)
+                border-bottom: 3px solid rgba(2, 117, 177, 1)
+
+            & svg
+                margin-left: $size-l
+                margin-right: $size-xs
+                vertical-align: middle
+                &:hover path
+                    stroke: rgba(0, 0, 0, 1)
+                    opacity: 0.6
+            & span
+                font-size: $size-xs+2px
+                color: rgba(24, 24, 24, 1)
+                display: inline-block
+                font-weight: bold
+
+                &:hover
+                    color: rgba(24, 24, 24, 1)
+                    opacity: 0.8
+
+span
+    &:last-child
+        float: right
+        margin-right: 30px
+        font-size: $size-xs+2px
+        color: rgba(24, 24, 24, 1)
+        font-weight: bold
+
+// правый блок, информация о пользователях
+
+.user-information
+    // width: 851px
+    margin-left: $size-l+33px
+
+    &__button
+        display: flex
+        align-items: flex-end
+        border-bottom: 1px solid lightgrey
+
+    &__button__blue
+        @extend %btn-reset
+        background: linear-gradient(180deg, #0077B5 0%, #0E6795 100%)
+        padding: $size-m+5px $size-l+58px
+        color: rgba(255, 255, 255, 1)
+        border-radius: 4px 4px 0px 0px
+        font-size: $size-xs+2px
+        text-transform: uppercase
+        font-weight: 600
+        &:hover
+            background: linear-gradient(180deg, #066091 0%, #085a83 100%)
+            cursor: pointer
+        &:focus
+            background: linear-gradient(180deg, #046da5 0%, #076797bb 100%)
+    &__button__white
+        @extend %btn-reset
+        background-color: $first-color
+        padding: $size-s+1px $size-l+85px
+        border: 1px solid rgba(231, 231, 231, 1)
+        font-size: $size-xs+2px
+        color: rgba(24, 24, 24, 1)
+        text-transform: uppercase
+        font-weight: 600
+
+        &:hover
+            cursor: pointer
+            background-color: #fcf8f8
+        &:focus
+            background-color: #e7dcdc
+
+    &__filter
+        display: flex
+        margin-top: $size-m * 2
+        align-items: center
+
+        & .border
+            width: $size-l * 10+2px
+            height: 2px
+            background-color: lightgrey
+        & img
+            margin-left: $size-m
+            margin-right: $size-m
+
+    &__new-connection
+        display: flex
+        flex-direction: column
+        margin-top: $size-l
+        & .one
+            display: flex
+            align-items: center
+            background-color: rgba(255, 255, 255, 1)
+            border-radius: $b-radius
+            margin-bottom: $size-xs
+            & .photo-person
+                display: flex
+                align-items: center
+                & img
+                    margin-left: $size-l
+                    margin-right: $size-s
+            & .info
+                margin-right: $size-l+20px
+                margin-left: $size-s
+
+                & span
+                    font-size: $size-s - 1px
+                    font-weight: 600
+                & p
+                    font-size: $size-xs
+                    color: rgba(24, 24, 24, 1)
+                    margin-top: $size-xs - 5px
+                & a
+                    & p
+                        font-size: $size-xs
+                        color: rgba(2, 117, 177, 1)
+
+            & .description
+                margin: $size-m+5px 0
+                margin-right: $size-l+14px
+                border-left: 2px solid rgba(2, 117, 177, 1)
+
+                & p
+                    font-size: $size-xs
+                    color: rgba(24, 24, 24, 0.6)
+                    line-height: $size-s
+                    padding-left: $size-s
+                    width: 300px
+            & .option
+                margin: $size-m+3px 0
+                & button
+
+                    padding: $size-xs+1px $size-m
+                    border-radius: $b-radius
+                    font-size: $size-xs+2px
+                    text-transform: uppercase
+
+        .accept
+            background: linear-gradient(180deg, #0077B5 0%, #0E6795 100%)
+            color: rgba(255, 255, 255, 1)
+            @extend %btn-reset
+
+            &:hover
+                background: linear-gradient(180deg, #066091 0%, #085a83 100%)
+                cursor: pointer
+            &:focus
+                background: linear-gradient(180deg, #046da5 0%, #076797bb 100%)
+
+        .decline
+            @extend %btn-reset
+            background-color: rgba(255, 255, 255, 1)
+            color: rgba(183, 183, 183, 1)
+            margin-left: $size-s
+            border: 1px solid #E7E7E7
+            &:hover
+                cursor: pointer
+                background-color: #fcf8f8
+                &:focus
+                    background-color: #e7dcdc
+    &__filter-recent
+        display: flex
+        margin-top: $size-m * 2
+        align-items: center
+
+        & .border
+            width: $size-l * 10+$size-l
+            height: 2px
+            background-color: lightgrey
+        & img
+            margin-left: $size-m
+            margin-right: $size-m
+
+// блок недавно подключившихся 
+
+.recent-conection
+    display: flex
+    flex-wrap: wrap
+    margin-top: $size-l+16px
+    justify-content: space-between
+
+    & .people
+        display: flex
+        width: 420px
+        border-radius: $b-radius
+        background: $first-color
+        margin-bottom: $size-xs
+        & .avatar
+            margin-left: $size-l
+            margin-right: $size-s
+            padding: $size-m 0
+
+        & .description-image
+            display: flex
+            flex-direction: column
+            justify-content: center
+            font-size: $size-xs
+            width: 80%
+            margin-top: $size-m
+
+        span
+            color: rgba(24, 24, 24, 0.3)
+            font-size: $size-xs
+            align-self: flex-end
+            margin-top: $size-xs
+
+        p
+            font-size: $size-s -1px
+            &:first-child
+                font-size: $size-s - 1px
+                font-weight: 600
+                margin-bottom: $size-xs - 5px
+            &:last-child
+                font-size: $size-xs
+                color: rgba(24, 24, 24, 1)
+
+// оформление  подвала страницы 
+
+.footer-wrapper
+    width: 100%
+    background: #F7F9FB
+    margin-top: $size-l+6px
+
+.footer
+    display: flex
+    margin-left: $size-xs * 13
+
+    &__logo
+        padding: $size-l 0 $size-l+76px 0
+
+    &__navigation
+        display: flex
+        flex-direction: column
+        width: 485px
+        margin: $size-l 0 0 $size-l+39px
+
+    &__subtitle
+        margin-bottom: $size-l
+        font-size: $size-xs+2px
+        color: rgba(24, 24, 24, 1)
+        font-weight: 600
+
+    &__links
+        display: flex
+        justify-content: space-between
+        & ul
+            list-style-type: none
+            font-size: $size-xs+2px
+            & li
+                padding-bottom: $size-xs
+                color: rgba(24, 24, 24, 1)
+                &:hover
+                    text-decoration: underline
+                    text-decoration-color: rgba(24, 24, 24, 1)
+    &__button
+        margin-left: $size-l+35px
+        display: flex
+        flex-direction: column
+        & h5
+            margin: $size-l 0 $size-m+3px 0
+        &__blue
+            background-color: rgba(2, 117, 177, 1)
+            color: rgba(255, 255, 255, 1)
+            @extend %btn-reset
+            padding: $size-xs+1px $size-l+54px $size-xs+1px $size-s
+            border-radius: $b-radius
+            text-transform: uppercase
+            font-size: $size-xs+2px
+            margin-bottom: $size-xs
+            text-align: left
+            position: relative
+            cursor: pointer
+
+            & img
+                margin: $size-xs $size-s 0 $size-l+13px
+                position: absolute
+                top: 0
+
+            &:hover
+                background-color: #0369a0
+            &:focus
+                background-color: #1b90cf
+                cursor: default
+        &__white
+            @extend %btn-reset
+            padding: $size-xs $size-l+54px $size-xs+1px $size-xs - 5px
+            border-radius: $b-radius
+            text-transform: uppercase
+            font-size: $size-xs+2px
+            color: rgba(2, 117, 177, 1)
+            border: 1px solid rgba(2, 117, 177, 1)
+            background-color: #fcf8f8
+            position: relative
+            cursor: pointer
+
+            & img
+                width: 16px
+                height: 16px
+                position: absolute
+                top: 0
+                margin: $size-xs $size-s 0 $size-l+24px
+            &:hover
+                background-color: #e2e0e0
+
+            &:focus
+                background-color: #ebe9e9
+                cursor: default
+
+    &__input
+        margin-left: $size-l * 3
+        & h5
+            margin: $size-l  0 $size-m 0
+        & #select
+            border-radius: $b-radius
+            @extend %btn-reset
+            border: 1px solid $secondary-color
+            font-weight: 500
+            text-transform: uppercase
+            padding: 11px 200px 10px 15px
+            
+
+            &:hover
+                cursor: pointer
+
+    //  медиа запрос , брекпоинт 1024-768 px 
+@media screen and (max-width: 1024px) and (min-width: 768px)
+    body
+        width: 100%
+        margin: 0
+
+    .wrapper-header
+        width: 100%
+
+    .header
+        width: 90%
+
+        &__logo
+            width: 20%
+
+        &__menu
+            width: 50%
+
+            & .menu-elements
+                margin-left: 0
+                padding-bottom: 5px
+                margin-top: 5px
+                
+
+                & img
+                    width: $size-xs
+                    height: $size-xs
+                & svg
+                    width: 17px
+                    height: 17px
+
+                & p
+                    font-size: $size-xs
+        &__search
+            width: 40%
+            padding: 0
+            margin: 0 $size-xs
+            border-right: 1px solid $secondary-color
+
+            & img
+                display: none
+            & input
+                margin: 0
+                width: 100%
+                margin-top: $size-m
+                padding: $size-xs $size-xs - 5px
+                border-radius: $b-radius
+
+        &__account
+            width: 10%
+            border-right: 0
+            padding: 0
+            margin: 0
+            & .image
+                margin: 0 auto
+                & img
+                    vertical-align: middle
+                    margin-right: 10px
+
+            & .info
+                display: none
+            & .views
+                display: none
+        & .other
+            display: none
+
+    .wrap
+        width: 80%
+        margin: $size-l+20px auto
+
+    .left
+        display: none
+
+    .right
+
+        width: 100%
+
+    .user-information
+        width: 100%
+        margin: 0
+        &__button
+            &__blue
+                width: 50%
+            &__white
+                width: 50%
+        &__new-connection
+            width: 100%
+            & .one
+                display: flex
+                align-items: center
+                justify-content: space-around
+                & .photo-person
+                    margin: 0
+                    & img
+                        margin-left: 0
+                & .info
+                    margin: 0
+                & .description
+                    margin-top: $size-m
+                    margin-right: 0
+                & .option
+                    margin: 0
+                    display: flex
+                    flex-direction: column
+                    & .accept
+                        padding: $size-xs
+
+                    & .decline
+                        padding: $size-xs
+                        margin: 0
+                        margin-top: $size-xs
+
+    .recent-conection
+
+        & .people
+            width: 45%
+            font-size: 8px
+
+        & .description-image
+            width: 170px
+            margin-right: $size-m
+
+        & .avatar
+            margin-left: $size-xs
+        & span
+            align-self: flex-end
+            margin: 0
+
+    .footer-wrapper
+        width: 90%
+        margin: 0 auto
+        background-color: #F7F9FB
+
+    .footer
+        width: 90%
+        margin: 0 auto
+        &__logo
+            display: none
+        &__navigation
+            margin-left: $size-xs
+
+        &__subtitle
+            margin-bottom: $size-xs
+        &__links
+            & ul
+                margin-right: $size-l
+        &__button
+            margin-left: $size-m
+
+            & h5
+                margin-bottom: $size-xs
+            & button
+                padding: $size-xs $size-l
+                img
+                    display: none
+        &__input
+            margin-left: $size-m
+            margin-right: $size-xs
+
+            & h5
+                margin-bottom: $size-xs
+            & #select
+                padding: $size-xs - 2px $size-l
+
+// медиа запрос 768-375 px
+@media screen and (max-width: 768px) and (min-width: 320px)
+    body
+
+    .wrapper-header
+        width: 100%
+
+    .header
+        width: 90%
+        margin-left: 5%
+        height: 50px
+
+        &__logo
+            width: 15%
+            padding: 0
+            align-self: center
+            display: flex
+            justify-content: center
+
+            & img
+                vertical-align: middle
+                width: 40%
+
+        &__menu
+            width: 60%
+            margin-top: -1px
+
+            & ul
+                padding-bottom: 0
+
+            & .menu-elements
+                margin-left: 0
+                padding-bottom: $size-xs - 2px
+                width: 100%
+                & li
+
+                & img
+                    width: $size-xs
+                    height: $size-xs
+
+                & svg
+                    width: $size-s+2px
+                    height: $size-s+2px
+
+                & p
+                    display: none
+        &__search
+            display: none
+
+        &__account
+            width: 20%
+            border-right: 0
+
+            & .info
+                display: none
+            & .image
+                width: 100%
+                display: flex
+                margin-left: $size-l+10px
+                & img
+                    width: $size-l
+                    margin: 0 auto
+
+        .other
+            display: none
+
+    .footer-wrapper
+        width: 90%
+        margin: 0 auto
+
+        & .footer
+            min-width: 80%
+            margin: 0 auto
+            margin-bottom: $size-l
+            &__button
+                display: none
+            &__logo
+                display: none
+            &__navigation
+                margin: 0 auto
+                width: 100%
+                & h5
+                    margin-top: $size-m
+                    margin-bottom: $size-s
+                    text-align: center
+            &__input
+                display: none
+            &__links
+                width: 100%
+                margin-bottom: 30px
+            &__links
+                margin: 0 auto
+                width: 100%
+
+    .wrap
+        width: 80%
+        margin: $size-l+20px auto
+
+    .left
+        display: none
+
+    .right
+        width: 100%
+
+    .user-information
+        width: 100%
+        margin: 0
+        &__button
+            display: flex
+            justify-content: center
+            width: 100%
+            margin: 0 auto
+            border: 0
+            &__blue
+                width: 50%
+                padding: $size-m $size-l
+
+            &__white
+                padding: $size-s $size-l
+                width: 50%
+
+        &__new-connection
+            width: 100%
+            & .one
+                width: 100%
+                margin: $size-xs auto
+                display: flex
+                align-items: center
+                justify-content: space-between
+
+                & .info
+                    margin: 0
+                    width: 60%
+                    font-size: $size-xs - 2px
+                    & img
+                        margin-left: 0
+
+                & .description
+                    display: none
+                & .option
+                    display: flex
+                    flex-direction: column
+                    margin: 0
+                    margin-right: $size-l
+
+                    & .accept
+                        padding: $size-xs
+                        margin: 0
+
+                    & .decline
+                        padding: $size-xs
+                        margin: 0
+                        margin-top: $size-xs
+
+    .recent-conection
+        & .people
+            width: 100%
+            font-size: 8px
+            margin: $size-xs auto
+
+// медиа запрос 420-320 px
+
+@media screen and (max-width: 420px) and (min-width: 320px)
+    body
+        .wrapper-header
+            width: 100%
+            
+        .header
+            width: 90%
+            margin: 0 auto
+            padding: 0
+            
+            &__logo 
+                width: 10%
+                margin-right: $size-s
+                display: flex
+                border-right: 0
+                margin-left: $size-m
+                & img
+                    width: 100%
+                    
+            &__menu
+                width: 80%
+                border-right: 0
+                border-right: 1px solid $secondary-color 
+                border-left: 1px solid $secondary-color
+
+                & ul
+                    padding-bottom: 0
+
+            & .menu-elements
+                margin-left: 0
+                width: 100%
+                
+               
+                & li  
+                    & img                    
+                    width: $size-xs
+                    height: $size-xs
+                    
+
+                & svg
+                    width: $size-s
+                    height: $size-s
+            &__account
+                display: flex
+                align-items: center
+                justify-content: center
+                margin-right: $size-l
+                width: 10%
+               
+    .wrap
+        margin-top: $size-l
+        & .one
+            justify-content: space-around
+            
+            & .photo-person
+                & img
+                    margin: 0
+                & .info
+                    & a 
+                        display: none
+            & .option
+                margin: 0            
+                          
+    .footer
+        &__links
+            & li 
+                font-size: $size-xs
+                    
+                    
+
+
+                
