@@ -1,0 +1,406 @@
+
+// переменная шрифта   
+$font-stack: 'Mulish', sans-serif
+
+// цвета текста
+$title-color: rgba(0, 0, 0, 1)
+$description-color: rgba(125, 121, 135, 1)
+$links-color: rgba(255, 255, 255, 1)
+
+//радиус кнопок
+$b-radius: 55px
+
+%reset
+    margin: 0
+    padding: 0
+
+// обнуление параметров кнопки
+%btn-reset
+    outline: none
+    border: 0
+    cursor: pointer
+
+// переменные для размера
+$size-xs: 10px
+$size-s: 20px
+$size-m: 30px
+$size-l: 40px
+
+*
+    box-sizing: border-box
+    @extend %reset
+    font-family: $font-stack
+
+body
+
+// стилизация header
+.wrapper-header
+    // background-color: coral
+    margin-left: $size-xs * 19
+    margin-right: $size-l+114px
+    margin-top: $size-l+6px
+
+.header
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    &__nav
+        width: 100%
+        display: flex
+        justify-content: space-between
+        margin-bottom: $size-l+36px
+
+    &__item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        list-style-type: none
+        width: 545px
+
+        & a
+            text-decoration: none
+            color: rgba(31, 21, 52, 1)
+            opacity: 0.5
+            font-size: $size-s - 2px
+            font-weight: 400
+
+            &:hover
+                cursor: pointer
+                text-decoration: underline
+                opacity: 1
+
+    &__description
+        display: flex
+        & .info
+            display: flex
+            flex-direction: column
+
+            // background-color: brown 
+            & .title
+                font-size: $size-l+8px
+                font-weight: 700
+                line-height: 56px
+                margin-top: 100px
+            & p
+                color: $description-color
+                font-size: $size-s+1px
+                font-weight: 300
+                margin-top: $size-m
+                margin-bottom: $size-l+5px
+                line-height: $size-m+2px
+            & button
+                background: rgba(69, 143, 246, 1)
+                @extend %btn-reset
+                border-radius: $b-radius
+                padding: 3px $size-l
+                font-size: $size-s - 2px
+                font-weight: bold
+                color: $links-color
+                line-height: $size-m * 2
+                cursor: pointer
+                &:hover
+                    background: #267df7
+                &:focus
+                    background: #6daaff
+                    cursor: default
+
+                // медиа запрос для маленьких разрешений
+@media screen and (max-width:425px) and (min-width:320px)
+
+    .wrapper-header
+        // background: red
+        width: 90%
+        margin: 0
+        margin: 0 auto
+
+    .header
+        &__nav
+            display: flex
+            justify-content: space-between
+        &__item
+            display: flex
+            width: 80%
+            & a
+                font-size: $size-xs - 1px
+                
+
+        &__logo
+            width: 10%
+            // background-color: grey 
+            margin: 0
+            & img
+                width: 100%
+
+        &__description
+            width: 90%
+            margin: 0 auto
+            display: flex
+            flex-direction: column-reverse
+            & .info
+                width: 100%
+                & .title
+                    margin: $size-m auto
+                    margin-bottom: 0
+                    font-size: $size-s
+                & p
+                    margin: 0
+                    font-size: $size-xs+6px
+                    text-align: center
+                & .button
+                    margin: $size-s 0
+                    & button
+                        width: 100%
+                        font-size: $size-s
+            & .background-info
+                margin: 0
+                & img
+                    width: 100%
+
+// медиа запрос для больших разрешений 
+@media screen and (max-width:1200px) and (min-width:900px)
+
+    .wrapper-header
+        width: 90%
+        margin: 0 auto
+        // background: violet
+        .header
+            &__nav
+                display: flex
+                margin-bottom: $size-l
+
+            &__item
+                display: flex
+                width: 70%
+                
+                & a
+                    font-size: $size-s
+                    
+            &__logo
+                width: 20%
+            // background-color: grey 
+                margin: 0
+                & img
+                    width: 100%
+
+            &__description
+                width: 100%
+                margin: 0 auto
+                display: flex
+                justify-content: space-between
+            & .info
+                width: 40%
+                display: flex
+                align-items: flex-start
+                & .title
+                    margin: $size-m auto
+                    margin-bottom: 0
+                    font-size: $size-m+3px
+                    font-weight: 800
+                    
+                & p
+                    margin: 20px 0
+                    font-size: $size-s
+                & .button
+                    width: 80%
+                    margin: $size-s 0
+                    
+                    & button
+                        width: 90%
+                        font-size: $size-s
+                        
+            & .background-info
+                width: 40%
+                margin: 0
+                & img
+                    width: 100%
+
+// медиа запрос для средних разрешений
+@media screen and (max-width:900px) and (min-width:750px)
+    .wrapper-header
+        width: 90%
+        margin: 0 auto
+        .header
+            &__nav
+                display: flex
+                align-items: center
+                margin-bottom: $size-l
+
+            &__item
+                display: flex
+                width: 70%
+                margin: 0 
+                
+                & a
+                    font-size: $size-s - 3px
+                    
+            &__logo
+                width: 20%
+                margin: 0
+                & img
+                    width: 90%
+                    height: 90%
+
+            &__description
+                width: 100%
+                margin: 0 auto
+                display: flex
+                justify-content: space-between
+            & .info
+                width: 40%
+                display: flex
+                align-items: flex-start
+                & .title
+                    margin: $size-m auto
+                    margin-bottom: 0
+                    font-size: $size-m+1px
+                    font-weight: 800
+                    line-height: $size-l
+                    
+                & p
+                    margin: 20px 0
+                    font-size: $size-s - 2px
+                & .button
+                    width: 90%
+                    margin: $size-s 0
+                    
+                    & button
+                        width: 100%
+                        font-size: $size-s - 2px
+                        
+            & .background-info
+                width: 50%
+                margin: 0
+                & img
+                    width: 100%
+
+@media screen and (max-width:750px) and (min-width: 600px)
+    
+    .wrapper-header
+        width: 90%
+        margin: 0 auto
+        .header
+            &__nav
+                display: flex
+                align-items: center
+                margin-bottom: $size-l
+
+            &__item
+                display: flex
+                width: 80%
+                margin: 0
+                justify-content: space-between 
+                
+                & a
+
+                    font-size: $size-s - 5px
+                    
+            &__logo
+                align-self: center
+                width: 15%
+                margin: 0
+                & img
+                    width: 100%
+                    height: 90%
+
+            &__description
+                width: 100%
+                display: flex
+                justify-content: space-between
+            & .info
+                width: 40%
+                display: flex
+                & .title
+                    margin: $size-m auto
+                    margin-bottom: 0
+                    font-size: $size-m - 5px
+                    font-weight: 800
+                    line-height: $size-l
+                    
+                & p
+                    margin: 20px 0
+                    font-size: $size-s - 7px
+                & .button
+                    width: 100%
+                    margin: $size-s 0
+                    
+                    & button
+                        width: 100%
+                        font-size: $size-xs+2px
+                        
+            & .background-info
+                width: 50%
+                margin: 0
+                & img
+                    width: 100%
+
+@media screen and (max-width:600px) and (min-width: 425px)    
+    .wrapper-header
+        width: 90%
+        margin: 0 auto
+        .header
+            &__nav
+                display: flex
+                align-items: center
+                margin-bottom: $size-l
+
+            &__item
+                display: flex
+                width: 70%
+                justify-content: space-between 
+                
+                & a
+
+                    font-size: $size-xs
+                    
+            &__logo
+                align-self: center
+                width: 15%
+                margin: 0
+                & img
+                    width: 100%
+                    height: 90%
+
+            &__description
+                width: 100%
+                display: flex
+                flex-direction: column-reverse
+                align-items: center
+
+                
+                
+                & .info
+                    width: 90%
+                    display: flex 
+                    flex-direction: column
+                    align-items: center
+                    & p 
+                        font-size: $size-xs+4px
+                        width: 80%
+                        margin: $size-s 0
+                        line-height: $size-m
+                        text-align: center
+                
+             
+                
+                & .title
+                    margin-top: $size-m 
+                    font-size: $size-m - 8px
+                    font-weight: 800
+                    line-height: $size-l
+                    
+                & .button
+                    width: 80%
+                    margin: 0 auto
+                    margin-bottom: $size-m
+                   
+                    
+                    
+                    & button
+                        width: 100%
+                        font-size: $size-xs+5px
+                        
+                & .background-info
+                    width: 100%
+                    margin: 0 auto
+                    & img
+                        width: 100%
